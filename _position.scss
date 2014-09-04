@@ -1,18 +1,14 @@
 @mixin pos($offsets, $shorthand: absolute) {
-  @if $shorthand !=null {
-    @if $shorthand == "r" or $shorthand == "rel" or $shorthand == "relative" {
-      position: relative;
-    } @else if $shorthand == "a" or $shorthand == "ab" or $shorthand == "abs" or $shorthand == "absolute"{
-      position: absolute;
-    }@else if $shorthand == "f" or $shorthand == "fix" or $shorthand == "fixed" {
-      position: fixed;
-    } @else {//didn't match, don't output anything
-      @debug "position accepts 'r, rel, relative, a, ab, abs, absolute, f, fix, fixed' as shorthands"
-    }
+  @if $shorthand == "r" or $shorthand == "rel" or $shorthand == "relative" {
+    position: relative;
+  } @else if $shorthand == "a" or $shorthand == "ab" or $shorthand == "abs" or $shorthand == "absolute"{
+    position: absolute;
+  }@else if $shorthand == "f" or $shorthand == "fix" or $shorthand == "fixed" {
+    position: fixed;
+  } @else {//didn't match, don't output anything
+    @debug "position accepts 'r, rel, relative, a, ab, abs, absolute, f, fix, fixed' as shorthands"
   }
   
-
-  //none || null means ignore
   //auto sets val back to normal, 'removes' it, say left is set to 0, then you want right:0 at a mQ, set left:auto to get rid of it
 
   // position ALL the offsets
