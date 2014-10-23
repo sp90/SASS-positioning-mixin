@@ -8,7 +8,18 @@
 </code>
 
 <h2>Properties</h2>
-<p>This contains shorthands for positions like "fixed" can be shorted to "f"</p>
+<p>This contains shorthands for positions like "fixed" can be shorted to "f" here is a list of the shorthands</p>
+* relative
+	* rel
+	* r
+* absolute
+	* a
+	* ab
+	* abs
+* fixed
+	* f
+	* fix
+
 <p>If you dont write a position type it will fallback to position: absolute;</p>
 <p>make it ignore the properties see the examples below</p>
 
