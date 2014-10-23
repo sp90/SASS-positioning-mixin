@@ -26,54 +26,52 @@
 <h2>Examples</h2>
 <pre>
 	<code>
+	.arrow { 
+		@include pos(5px null null -10px); 
+	}
+	.arrow { 
+		position: absolute; 
+		top: 5px; 
+		left: -10px; 
+	}
+	
+	//anchor some text to the bottom on an element
+	.caption { 
+		@include pos(null 0 0, fix); 
+	}
+	.caption { 
+		position: fixed; 
+		right: 0; 
+		bottom: 0; 
+		left: 0; 
+	}
+	
+	//full screen modal
+	.modal { 
+		@include pos (0, f); 
+	}
+	.modal { 
+		position: absolute; 
+		top: 0; 
+		right: 0; 
+		bottom: 0; 
+		left: 0; 
+	}
+	
+	//remove any previous offsets 
+	.main-nav {
+		@include pos(0 null null -100%, f);
 		
-		
-		.arrow { 
-			@include pos(5px null null -10px); 
-		}
-		.arrow { 
-			position: absolute; 
-			top: 5px; 
-			left: -10px; 
-		}
-		
-		//anchor some text to the bottom on an element
-		.caption { 
-			@include pos(null 0 0, fix); 
-		}
-		.caption { 
-			position: fixed; 
-			right: 0; 
-			bottom: 0; 
+		&.active { 
 			left: 0; 
 		}
-		
-		//full screen modal
-		.modal { 
-			@include pos (0, f); 
+	}
+	
+	@media (min-width: 40em) {
+		//needs relative for absolute children, but remove any offset
+		.main-nav { 
+			@include pos (auto, r);
 		}
-		.modal { 
-			position: absolute; 
-			top: 0; 
-			right: 0; 
-			bottom: 0; 
-			left: 0; 
-		}
-		
-		//remove any previous offsets 
-		.main-nav {
-			@include pos(0 null null -100%, f);
-			
-			&.active { 
-				left: 0; 
-			}
-		}
-		
-		@media (min-width: 40em) {
-			//needs relative for absolute children, but remove any offset
-			.main-nav { 
-				@include pos (auto, r);
-			}
-		}
+	}
 	</code>
 </pre>
